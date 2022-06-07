@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pie chart pratice</title>
+    <link rel="stylesheet" href="/test.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+   
+
+<figure class="highcharts-figure">
+  <div id="container"></div>
+  </p>
+</figure>
+<script>
+    // Build the chart
+  /*
+    var result =
+    [['AMAZON.COM', 50 ,'電傷平台'], 
+    ['ABBOTT LABORATORIES', 30], 
+    ['AES', 15], 
+    ['ABIOMED', 5]];*/
+
+   var result = {{ result|safe }} ;
+   console.log(result.length);
+
+   //var List = {{ List|safe }};
+
+
+
+
+
+
+
+
+
+
+Highcharts.chart('container', {
+  chart: {
+    plotBackgroundColor: null,
+    plotBorderWidth: null,
+    plotShadow: false,
+    type: 'pie'
+  },
+  title: {
+    text: '您的投資組合'
+  },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  accessibility: {
+    point: {
+      valueSuffix: '%'
+    }
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: false
+      },
+      showInLegend: true
+    }
+  },
+  series: [{
+    name: '權重',
+    colorByPoint: true,
+    data: [{
+      name: result[0][0],
+      y: result[0][1],
+      // sliced: true,
+      // selected: true
+    }, {
+      name: result[1][0],
+      y: result[1][1]
+    }, {
+      name: result[2][0],
+      y: result[2][1]
+    }, {
+      name: result[3][0],
+      y: result[3][1]
+    }
+    ]
+  }]
+});
+</script>
+</body>
+</html>

@@ -35,13 +35,17 @@ class Investcombination(models.Model):
     shares = models.FloatField()
 
 """
-from django.db import models
 
 # Create your models here.
 class User(models.Model):
 	user_name = models.CharField(max_length=100)
 	user_account = models.CharField(max_length=50)
 	user_password = models.CharField(max_length=50)
+	user_email = models.EmailField(max_length=150)
+	user_tel = models.CharField(max_length=10)
+	user_career = models.CharField(max_length=15)
+	user_age = models.IntegerField()
+
 
 class Department(models.Model):
 	name = models.CharField(max_length=100)
@@ -49,6 +53,7 @@ class Department(models.Model):
 class Company(models.Model):
 	name = models.CharField(max_length=100)
 	department = models.ForeignKey(Department, on_delete=models.CASCADE)
+
 """
 class Invest_combination(models.Model):
 	company = models.ForeignKey(Company, on_delete=models.CASCADE)
