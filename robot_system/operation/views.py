@@ -8,15 +8,15 @@ def pieChar(request):
 	#data = {'key1':'value1','key2':'value2'}
     #return render(request, 'page.html',{'data':data}) 
 	result =[['AMAZON.COM', 50 ,'電傷平台'], 
-    ['ABBOTT LABORATORIES', 30], 
-    ['AES', 15], 
-    ['ABIOMED', 5]]
+    		['ABBOTT LABORATORIES', 30], 
+    		['AES', 15], 
+    		['ABIOMED', 5]]
 
 
 	return render(request, 'operation/pieChar.html',{'result': result})
 
 
-def menber_detail(request, user_id):
+def member(request, user_id):
 	#return render(request, 'operation/menber.html' ,{'data':data})
 	#class User():
 	#	def __init__(self, name, account, password, email, tel, career, age):
@@ -34,7 +34,7 @@ def menber_detail(request, user_id):
 		raise Http404("The user does not exist.")
 	#user = get_object_or_404(User, pk=user_id)
 	
-	return render(request,'operation/menberDetail.html',{'user':user})
+	return render(request,'operation/member.htm',{'user':user})
 
 def aboutUs(request):
 	pass

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zh-Hant-TW">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>智能撲滿</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'operation/member.css' %}">  <!--連結到index.css-->
+        <link rel="icon" href="../asset/image/logo_money.png">
+        <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+    <body>
+        <nav>
+            <ul class="container-nav">
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="home.htm">首頁</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="about-us.htm">關於我們</a>
+                    </div>
+                </li>
+                <li class="container-nav-btn">
+                    <div class="container-nav-btn-text">
+                        <a href="knowledge.htm">知識＋</a>
+                    </div>
+                   
+                </li>
+                <li class="container-nav-btn" id="container-nav-btn-expect">
+                    <div class="container-nav-btn-text">
+                        <a href="member.htm">會員專區</a>
+                    </div>
+                    
+                </li>
+            </ul>
+        </nav>
+        <!-- first paragraph -->
+        <!-- <div class="container-first-paragraph">
+
+            <nav class="container-first-paragraph-sidebar">
+              <a data-id="1">個人檔案</a>
+              <a data-id="2">歷史試算紀錄</a>
+            </nav>
+            <main>
+              <div class="container-first-paragraph-content">個人資料</div>
+              <div>歷史試算紀錄</div>
+            </main>
+          
+          </div>
+        
+        <script>
+            document.querySelectorAll('nav a')
+            .forEach(e => e.addEventListener('click', _ => change(e.dataset.id)))
+
+
+            function change(n) {
+            let panels = document.querySelectorAll('main div')
+            panels.forEach(p => p.classList.remove('active'))
+            panels[n - 1].classList.add('active')
+            }
+        </script> -->
+         <div class="container">
+
+            <nav class="second">
+                <a data-id="1">個人檔案</a>
+                <a data-id="2">歷史試算紀錄</a>
+            </nav>
+            <main>
+                <div class="active">
+                    <p>姓名：{{ user.user_name }}</p>
+                    <p>帳號：{{ user.user_account }}</p>
+                    <p>電話：{{ user.user_tel }}</p>
+                    <p>電子郵件：{{ user.user_email }}</p>
+                    <p>職業：{{ user.user_career }}</p>
+                    <p>年齡：{{ user.user_age }}</p>
+                    <p>收入：{{ user.user_income }}</p>
+                    <!-- <p>電話</p>
+                    <form>
+                        請輸入文字：<input type="text" name="欄位名稱">
+                        </form> -->
+                </div>
+                <div>
+                    <p>歷史試算紀錄</p>
+                </div>
+            </main>
+          
+          </div>
+        
+        <script>
+            document.querySelectorAll('nav a')
+            .forEach(e => e.addEventListener('click', _ => change(e.dataset.id)))
+
+
+            function change(n) {
+            let panels = document.querySelectorAll('main div')
+            panels.forEach(p => p.classList.remove('active'))
+            panels[n - 1].classList.add('active')
+            }
+        </script>
+    </body>
+</html>

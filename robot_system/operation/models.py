@@ -45,6 +45,7 @@ class User(models.Model):
 	user_tel = models.CharField(max_length=10)
 	user_career = models.CharField(max_length=15)
 	user_age = models.IntegerField()
+	user_income = models.IntegerField()
 
 
 class Department(models.Model):

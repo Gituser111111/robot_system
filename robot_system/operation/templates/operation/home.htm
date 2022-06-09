@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>智能撲滿</title>
-        <link rel="stylesheet" href="css/home.css">  <!--連結到index.css-->
+        <link rel="stylesheet" type="text/css" href="{% static 'operation/home.css' %}">  <!--連結到index.css-->
         <link rel="icon" href="asset/image/logo_money.png">
         <script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
     <body>
@@ -20,7 +21,7 @@
                     <a href="">知識＋</a>
                 </li>
                 <li class="container-nav-btn" id="container-nav-btn-expect">
-                    <a href="">會員專區</a>
+                    <a href="/operation/templates/operation/menberDetail.html">會員專區</a>
                 </li>
             </ul>
         </nav>
