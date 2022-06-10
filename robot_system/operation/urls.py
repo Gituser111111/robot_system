@@ -12,6 +12,7 @@ urlpatterns = [
     path('login/', views.login, name = 'login'),
     path('menberDetail/',views.menber_detail,name = 'menberDetail'),
     path('menber/<int:user_id>/',views.menber_detail ),
+    path('member/<int:user_id>', views.member),
     path('pieChar', views.pieChar, name='pieChar'),
 
 ]
