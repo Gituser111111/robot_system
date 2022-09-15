@@ -1,5 +1,6 @@
-from django.shortcuts import render
-from .models import User
+from django.shortcuts import render, get_object_or_404
+from .models import User, Weight
+
 
 def home(request):
     return render(request, 'operation/home.htm',{})
@@ -7,14 +8,20 @@ def home(request):
 def pieChar(request):
 	#data = {'key1':'value1','key2':'value2'}
     #return render(request, 'page.html',{'data':data}) 
-	result =[['AMAZON.COM', 50 ,'電傷平台'], 
+	"""result =[['AMAZON.COM', 50 ,'電傷平台'], 
     ['ABBOTT LABORATORIES', 30], 
     ['AES', 15], 
     ['ABIOMED', 5]]
-
+"""
+	w = Weight.objects.all()
+	weight = [[x.name, x.weight] for x in w]
+	return render(request, 'operation/pieChar.html', {'weight': json.dumps(List)})
 
 	return render(request, 'operation/pieChar.html',{'result': result})
 
+def member(request, user_id):
+	user = get_object_or_404(User, pk=user_id)
+	return render(request, 'operation/member.htm', {'user':user})
 
 def menber_detail(request, user_id):
 	#return render(request, 'operation/menber.html' ,{'data':data})

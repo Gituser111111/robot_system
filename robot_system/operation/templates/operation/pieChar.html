@@ -27,8 +27,8 @@
     ['AES', 15], 
     ['ABIOMED', 5]];*/
 
-   var result = {{ result|safe }} ;
-   console.log(result.length);
+   /*var result = {{ result|safe }} ;
+   console.log(result.length);*/
 
    //var List = {{ List|safe }};
 
@@ -72,7 +72,7 @@ Highcharts.chart('container', {
   series: [{
     name: '權重',
     colorByPoint: true,
-    data: [{
+    data: /*[{
       name: result[0][0],
       y: result[0][1],
       // sliced: true,
@@ -87,7 +87,8 @@ Highcharts.chart('container', {
       name: result[3][0],
       y: result[3][1]
     }
-    ]
+    ]*/
+    {{ weight|safe }}
   }]
 });
 </script>

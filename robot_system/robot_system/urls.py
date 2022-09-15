@@ -21,5 +21,6 @@ urlpatterns = [
     #path('test/', include("FE_test.urls")),
     #path('apps/', include("apps.urls")),
     path('operation/', include("operation.urls")),
+    path('portfolio/',include("portfolio.urls")),
 
 ]
